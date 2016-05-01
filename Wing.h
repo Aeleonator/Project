@@ -24,7 +24,7 @@ private:
 	vector<Airfoil> nodes;
 public:
 	
-	Wing(vector<wingSections> sections);	
+	Wing();	
 	~Wing();
 
 

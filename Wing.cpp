@@ -11,7 +11,7 @@ using namespace std;
 	Constructor and Destructor
 
 ************************************************************************************************/
-Wing::Wing(vector<wingSections> sections): sections(sections)
+Wing::Wing()
 {	 
 }
 
