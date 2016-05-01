@@ -83,10 +83,7 @@ void Wing::discretize(int num){
 		for (auto temp : wing) {
 			if (isBetween(tempAirfoil.getLocation(), temp.start, temp.end)) {
 				tempAirfoil.setProfile(temp.profile);
-				tempAirfoil.setAlphaGeo(wingAlpha + temp.geoTwist);
-				//*****************************************************
-				//tempAirfoil.setChord 
-				//*************************************
+				tempAirfoil.setAlphaGeo(wingAlpha + temp.geoTwist);				
 			}
 		}
 	}

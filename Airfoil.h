@@ -1,4 +1,6 @@
 #pragma once
+
+//This class stores information about each node on the wing after the wing is discretized
 class Airfoil
 {
 public:
@@ -6,17 +8,16 @@ public:
 	~Airfoil();
 
 private:
-	string profile;
-	float location;
-	float chord;
-	float alphaGeo;
-	float alphaInduced;
-	float alphaEff;
-	float cl;
-	float gammaOld;
-	float gammaNew;
-	float gammaInput;
-	float d = 0.05;
+	string profile; //name of the airfoil profile at this node. May be different if there is aerodynamic twist
+	float location; //locatio of this node from the center of the winf
+	float chord = 1; //chord length of this node. For now, this will always be 1
+	float alphaGeo; //the geometric angle of attack of the node. May be different from the wing if there is geometric twist
+	float alphaInduced; //the angle of attack induced at this node
+	float alphaEff; //the effective angle of attack of this node
+	float cl; //the lift coefficient at this node
+	float gammaOld; //the value of circulation used in step 3 of the algorithm
+	float gammaNew; //the circulation calculated in step 6 from lift coefficient
+	float d = 0.05; //iteration daming coefficient used in step 7. Should remain constant in most cases
 
 public:
 	void setProfile(string name);
